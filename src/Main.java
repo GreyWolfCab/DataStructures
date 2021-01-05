@@ -1,21 +1,36 @@
-import arrays.Functions;
+import arrays.ArrayFunctions;
+import strings.StringFunctions;
 
 import java.util.Arrays;
 
 public class Main {
 
-    private static final Functions arrayFunctions = new Functions();
+    private static final ArrayFunctions arrayFunctions = new ArrayFunctions();
+    private static final StringFunctions stringFunctions = new StringFunctions();
 
     private static final int[] unsortedArray = {8, 7, 2, 5, 3, 1};
     private static final int sumValue = 50;
 
     public static void main(String[] args) {
-        int[] randomArray = arrayFunctions.generateUnsortedArray(50, 100);
-        System.out.println(Arrays.toString(randomArray));
+        int[] randomArray = arrayFunctions.generateUnsortedArray(50000, 100);
 
         int optimize = 0;//select the optimized solution (0 is best, greater than 0 gets progressively worse)
 
-        runPairSum(randomArray, optimize);
+        long startTime = System.nanoTime();
+
+        //runPairSum(randomArray, optimize);
+        runAnagram(optimize);
+
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println("Duration: " + duration);
+
+    }
+
+    private static void runAnagram(int optimize) {
+
+        System.out.println("Performing Anagram check...");
+        System.out.println("Anagram: " + stringFunctions.checkAnagram("Tom Marvolo Riddle", "I Am Lord Voldemort", optimize));
 
     }
 

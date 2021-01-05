@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Functions {
+public class ArrayFunctions {
 
     /**
      * returns the indices of a pair of ints whose sum equals the specified value
