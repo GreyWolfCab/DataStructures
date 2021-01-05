@@ -6,7 +6,7 @@ public class Main {
 
     private static final Functions arrayFunctions = new Functions();
 
-    private static final int[] unsortedArray = {8, 7, 4, 4, 4, 1};
+    private static final int[] unsortedArray = {8, 7, 2, 5, 3, 1};
     private static final int sumValue = 50;
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Performing pair sum check...");
         int[] pairSum = arrayFunctions.pairSum(array, sumValue, optimize);
         if (pairSum != null) {
-            System.out.println("Pair sum: " + pairSum[0] + " + " + pairSum[1] + " = " + sumValue);
+            System.out.println("Pair sum: " + array[pairSum[0]] + " + " + array[pairSum[1]] + " = " + sumValue);
         } else {
             System.out.println("Pair sum was not possible with the given array.");
         }
